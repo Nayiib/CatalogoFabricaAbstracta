@@ -6,12 +6,17 @@ import AbstractFactory.Caballo;
 import AbstractFactory.Espada;
 import AbstractFactory.Leon;
 import java.awt.Image;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class NewJFrame extends javax.swing.JFrame {
 
     public NewJFrame() {
         initComponents();
+        ImageIcon back = new ImageIcon("src/img/background.jpg");
+        Icon icono = new ImageIcon(back.getImage().getScaledInstance(_back.getWidth(), _back.getHeight(), Image.SCALE_DEFAULT));
+        _back.setIcon(icono);
+        this.repaint();
     }
 
     @SuppressWarnings("unchecked")
@@ -26,98 +31,66 @@ public class NewJFrame extends javax.swing.JFrame {
         _armadura = new javax.swing.JComboBox<>();
         clothes = new javax.swing.JLabel();
         animal = new javax.swing.JLabel();
+        _back = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(813, 517));
+        setMinimumSize(new java.awt.Dimension(813, 517));
+        setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        _arma.setBackground(new java.awt.Color(204, 255, 255));
+        _arma.setFont(new java.awt.Font("Malgun Gothic", 1, 12)); // NOI18N
         _arma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Espada", "Arco" }));
         _arma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _armaActionPerformed(evt);
             }
         });
+        jPanel1.add(_arma, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 100, 30));
 
         arma.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
                 armaComponentAdded(evt);
             }
         });
+        jPanel1.add(arma, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 155, 150));
 
-        enviar.setText("Enviar");
+        enviar.setBackground(new java.awt.Color(204, 255, 255));
+        enviar.setFont(new java.awt.Font("Malgun Gothic", 1, 12)); // NOI18N
+        enviar.setText("Crear");
         enviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enviarActionPerformed(evt);
             }
         });
+        jPanel1.add(enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 110, -1));
 
+        _montura.setBackground(new java.awt.Color(204, 255, 255));
+        _montura.setFont(new java.awt.Font("Malgun Gothic", 1, 12)); // NOI18N
         _montura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caballo", "Leon" }));
         _montura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _monturaActionPerformed(evt);
             }
         });
+        jPanel1.add(_montura, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 100, 30));
 
+        _armadura.setBackground(new java.awt.Color(204, 255, 255));
+        _armadura.setFont(new java.awt.Font("Malgun Gothic", 1, 12)); // NOI18N
         _armadura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Armadura" }));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_arma, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(_montura, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(51, 51, 51)
-                        .addComponent(arma, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addComponent(clothes, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(enviar)
-                            .addComponent(_armadura, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(147, 147, 147)
-                        .addComponent(animal, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(_arma, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(_montura, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(clothes, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(arma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(_armadura, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(enviar)
-                        .addGap(47, 47, 47))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(animal, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(25, Short.MAX_VALUE))))
-        );
+        jPanel1.add(_armadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 100, 30));
+        jPanel1.add(clothes, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 155, 150));
+        jPanel1.add(animal, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 155, 150));
+        jPanel1.add(_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 520));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,6 +180,7 @@ public class NewJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> _arma;
     private javax.swing.JComboBox<String> _armadura;
+    private javax.swing.JLabel _back;
     private javax.swing.JComboBox<String> _montura;
     private javax.swing.JLabel animal;
     private javax.swing.JLabel arma;

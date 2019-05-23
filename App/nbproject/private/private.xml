@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Zocalo/Documents/NetBeansProjects/App/src/AbstractFactory/MonturaAbs.java</file>
-            <file>file:/C:/Users/Zocalo/Documents/NetBeansProjects/App/src/Vista/NewJFrame.java</file>
-            <file>file:/C:/Users/Zocalo/Documents/NetBeansProjects/App/src/AbstractFactory/Arco.java</file>
-            <file>file:/C:/Users/Zocalo/Documents/NetBeansProjects/App/src/AbstractFactory/fabricaAbstracta.java</file>
-            <file>file:/C:/Users/Zocalo/Documents/NetBeansProjects/App/src/AbstractFactory/ArmaAbs.java</file>
-            <file>file:/C:/Users/Zocalo/Documents/NetBeansProjects/App/src/AbstractFactory/Caballo.java</file>
-            <file>file:/C:/Users/Zocalo/Documents/NetBeansProjects/App/src/AbstractFactory/Personaje.java</file>
-            <file>file:/C:/Users/Zocalo/Documents/NetBeansProjects/App/src/AbstractFactory/Leon.java</file>
-            <file>file:/C:/Users/Zocalo/Documents/NetBeansProjects/App/src/AbstractFactory/Armadura.java</file>
-            <file>file:/C:/Users/Zocalo/Documents/NetBeansProjects/App/src/AbstractFactory/Espada.java</file>
-            <file>file:/C:/Users/Zocalo/Documents/NetBeansProjects/App/src/AbstractFactory/ArmaduraAbs.java</file>
+            <file>file:/C:/Users/Zocalo/Desktop/App/src/Vista/NewJFrame.java</file>
         </group>
     </open-files>
 </project-private>
